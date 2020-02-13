@@ -35,80 +35,80 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				
-				<form class="login100-form validate-form" id="male_form">
+				<form class="login100-form validate-form" id="male_form" >
 					<span class="login100-form-title p-b-34">
 						Male Fittings
 					</span>
-					
+				
 					<div class="form-row">
                             <div class="form-group col-md-12">
                               <label for="chest-round">Chest Round</label>
-							  <input type="email" class="form-control" id="chest_round" placeholder="cm/inches">
+							  <input type="input100" class="form-control" id="chest_round" placeholder="cm/inches">
 					</div>
                             <div class="form-group col-md-12">
                               <label for="Shoulder">Shoulder</label>
-                              <input type="password" class="form-control" id="shoulder" placeholder="cm/inches">
+                              <input type="input100" class="form-control" id="shoulder" placeholder="cm/inches">
 							</div>
 														<div class="form-group col-md-12">
                               <label for="back">Back</label>
-                              <input type="email" class="form-control" id="back" placeholder="cm/inches">
+                              <input type="input100" class="form-control" id="back" placeholder="cm/inches">
 														</div>
 														<div class="form-group col-md-12">
 															<label for="inputState1">Sleeve Length</label>
-															<select id="inputState1" class="form-control">
+															<select id="inputState1" class="form-control" onchange = "showFields()">
 																<option selected disabled>Choose...</option>
-																<option value="Short">Short</option>
-																<option value="Long">Long</option>
+																<option value="Short" id="short">Short</option>
+																<option value="Long" id="long">Long</option>
 															</select>
 														</div>
-														<div class="form-row" id="short" style = "display: ninline; ">
+														<div class="form-row" id="shortFields" style = "display: none; ">
 															<div class="form-group col-md-12">
 																<label for="short-armhole">Short Armhole</label>
-																<input type="password" class="form-control" id="short_armhole" placeholder="cm/inches">
+																<input type="input100" class="form-control" id="short_armhole" placeholder="cm/inches">
 															  </div>
 															  <div class="form-group col-md-12">
 																<label for="sleeve-length">Sleeve Length</label>
-																<input type="password" class="form-control" id="sleeve_length" placeholder="cm/inches">
+																<input type="input100" class="form-control" id="sleeve_length" placeholder="cm/inches">
 															  </div>
 															  <div class="form-group col-md-12">
 																<label for="sleeve-round">Sleeve Round</label>
-																<input type="password" class="form-control" id="sleeve_round" placeholder="cm/inches">
+																<input type="input100" class="form-control" id="sleeve_round" placeholder="cm/inches">
 															  </div>
 														</div>
-														<div class="form-row" id="long" style="display: none; ">
+														<div class="form-row" id="longFields" style="display: none; ">
 																<div class="form-group col-md-6">
 																		<label for="long-armhole">Long Armhole</label>
-																		<input type="password" class="form-control" id="long_armhole" placeholder="cm/inches">
+																		<input type="input100" class="form-control" id="long_armhole" placeholder="cm/inches">
 																	  </div>
 																	  <div class="form-group col-md-6">
 																		<label for="long-sleeve-length">Long Sleeve Length</label>
-																		<input type="password" class="form-control" id="long_sleeve_length" placeholder="cm/inches">
+																		<input type="input100" class="form-control" id="long_sleeve_length" placeholder="cm/inches">
 																	  </div>
 																	  <div class="form-group col-md-6">
 																		<label for="long-sleeve-round"> Long Sleeve Round</label>
-																		<input type="password" class="form-control" id="long_sleeve_round" placeholder="cm/inches">
+																		<input type="input100" class="form-control" id="long_sleeve_round" placeholder="cm/inches">
 																	  </div>		
 																	  <div class="form-group col-m-6">
 																		<label for="elbow-round">Elbow Round</label>
-																		<input type="password" class="form-control" id="elbow_round" placeholder="cm/inches">
+																		<input type="input100" class="form-control" id="elbow_round" placeholder="cm/inches">
 																	  </div>
 																	  <div class="form-group col-md-6">
 																		<label for="wrist-round">Wrist Round</label>
-																		<input type="password" class="form-control" id="wrist_round" placeholder="cm/inches">
+																		<input type="input100" class="form-control" id="wrist_round" placeholder="cm/inches">
 																	  </div>
 																	  <div class="form-group col-md-6">
 																		<label for="shoulder-elbow">Shoulder Elbow Length</label>
-																		<input type="password" class="form-control" id="shoulder_elbow" placeholder="cm/inches">
+																		<input type="input100" class="form-control" id="shoulder_elbow" placeholder="cm/inches">
 																	  </div>	
 																	  <div class="form-group col-md-6">
 																		<label for="elbow-wrist">Elbow Wrist</label>
-																		<input type="password" class="form-control" id="elbow_wrist" placeholder="cm/inches">
+																		<input type="input100" class="form-control" id="elbow_wrist" placeholder="cm/inches">
 																	  </div>
 
 														</div>
 														<div class="form-group col-md-12">
 															<label for="inputState">Buttom</label>
-															<select id="inputState" class="form-control">
+															<select id="buttom" class="form-control">
 																<option selected>Choose...</option>
 																<option value="Three-quarter">Three Quarter</option>
 																<option value="Short">Short</option>
@@ -118,27 +118,27 @@
 													{{-- </div> --}}
 					<div class="form-group col-md-6">
 						<label for="waist-knee-length">Waist-Knee Length</label>
-						<input type="password" class="form-control" id="waist_knee_length" placeholder="cm/inches">
+						<input type="input100" class="form-control" id="waist_knee_length" placeholder="cm/inches">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="knee-feet-length">Knee-Feet Length</label>
-						<input type="password" class="form-control" id="knee_feet_length" placeholder="cm/inches">
+						<input type="input100" class="form-control" id="knee_feet_length" placeholder="cm/inches">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="waist-round">Waist Round</label>
-						<input type="password" class="form-control" id="waist_round" placeholder="cm/inches">
+						<input type="input100" class="form-control" id="waist_round" placeholder="cm/inches">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="thigh-round">Thigh Round</label>
-						<input type="password" class="form-control" id="thigh_round" placeholder="cm/inches">
+						<input type="input100" class="form-control" id="thigh_round" placeholder="cm/inches">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="knee-round">Knee Round</label>
-						<input type="password" class="form-control" id="knee_round" placeholder="cm/inches">
+						<input type="input100" class="form-control" id="knee_round" placeholder="cm/inches">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="ankle-round">Ankle Round</label>
-						<input type="password" class="form-control" id="ankle_round" placeholder="cm/inches">
+						<input type="input100" class="form-control" id="ankle_round" placeholder="cm/inches">
 					</div>
 				</div>
 
@@ -151,6 +151,11 @@
 						<button type="submit" value="submit" class="txt3" id="submit">Submit</button>
 
 					</div>
+					{{-- <div id="error_message" class="ajax_response" style="float:left"></div>
+					<div id="success_message" class="ajax_response" style="float:left"></div> --}}
+					<span id="error_message" class="text-danger"></span>
+					<span id="success_message" class="text-danger"></span>
+
 				</form>	
 
 				<div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
@@ -162,27 +167,6 @@
 
 	<div id="dropDownSelect1"></div>
 
-	<script>
-		const sleeveLength = document.getElementById('inputState1');
-		
-		sleeveLength.addEventListener('click', addArmHole);
-
-		function addArmHole(e){
-			e.preventDefault();
-
-			if( sleeveLength.options[sleeveLength.selectedIndex].value == 1 ){
-
-				document.getElementById('short').style.display = "block";
-
-
-			} else if ( sleeveLength.options[sleeveLength.selectedIndex].value == 2 ){
-
-				document.getElementById('long').style.display = "block";
-
-			}
-		}
-
-	</script>
 	
 <!--===============================================================================================-->
 	<script src="{{ URL::asset('vendor/jquery/jquery-3.2.1.min.js') }}"></script>
@@ -202,9 +186,12 @@
 	<script src="{{ URL::asset('js/main.js') }}"></script>
 
 	<script>
-		$(document).ready(function(){
+
+			$(document).ready(function(){
+
 			$('#submit').click(function(e){
 				e.preventDefault();
+
 
 				$.ajaxSetup({
 					headers: {
@@ -216,18 +203,71 @@
 					url: "{{ route('male.store') }}",
 					method: 'post',
 					dataType: 'json',
-					data: {},
+					data: {
+
+						chest_round: $('#chest_round').val(),
+						shoulder: $('#shoulder').val(),
+						back: $('#back').val(),
+
+						short_armhole: $('#short_armhole').val(),
+						sleeve_length: $('#sleeve_length').val(),
+						sleeve_round: $('#sleeve_round').val(),
+
+						long_armhole: $('#long_armhole').val(),
+						long_sleeve_round: $('#Long_sleeve_round').val(),
+						long_sleeve_length: $('#long_sleeve_length').val(),
+						elbow_round: $('#elbow_round').val(),
+						wrist_round: $('#wrist_round').val(),
+						shoulder_elbow_length: $('#shoulder_elbow').val(),
+						elbow_wrist: $('#elbow_wrist').val(),
+						
+						buttom: $('#buttom').val(),
+						waist_knee_length: $('#waist_knee_length').val(),
+						knee_feet_length: $('#knee_feet_length').val(),
+						waist_round: $('#waist_round').val(),
+						thigh_round: $('#thigh_round').val(),
+						knee_round: $('#knee_round').val(),
+						ankle_round: $('#ankle_round').val()
+
+					},
 
 					success: function(result){
-						$('.alert').show();
-						$('.alert').html(result.success);
-						$('#male_form')[0].reset();
+
+						$('#success_message').fadeIn().html('Form Submit Successfully!');
+							setTimeout(function() {
+						$('#success_message').fadeOut("slow");
+						}, 3000 );
+
+						$('#male_form').trigger("reset");
 
 						console.log(result);
 					}	
 				});
 			});
 		});
+
+		function showFields() {
+			
+			var option = document.getElementById('short').selected,
+				optionTwo = document.getElementById('long').selected;
+	
+			// sleeveLength.addEventListener('click', addArmHole);
+
+			if( option === true ){
+
+				document.getElementById('shortFields').style.display = "block";
+
+				// console.log(option);
+
+			} else if ( optionTwo == true ) {
+
+				document.getElementById('longFields').style.display = "block";
+			}
+
+		}
+
+
+
 	</script>
 
 </body>

@@ -18,16 +18,19 @@ class CreateMaleTable extends Migration
             $table->string('chest_round');
             $table->string('shoulder');
             $table->string('back');
-            $table->string('short_armhole');
-            $table->string('sleeve_length');
-            $table->string('sleeve_round');
-            $table->string('long_armhole');
-            $table->string('long_sleeve_round');
-            $table->string('long_sleeve_length');
-            $table->string('elbow_round');
-            $table->string('wrist_round');
-            $table->string('shoulder_elbow_length');
-            $table->string('elbow_wrist');
+
+            $table->string('short_armhole')->nullable();
+            $table->string('sleeve_length')->nullable();
+            $table->string('sleeve_round')->nullable();
+
+            $table->string('long_armhole')->nullable();
+            $table->string('long_sleeve_round')->nullable();
+            $table->string('long_sleeve_length')->nullable();
+            $table->string('elbow_round')->nullable();
+            $table->string('wrist_round')->nullable();
+            $table->string('shoulder_elbow_length')->nullable();
+            $table->string('elbow_wrist')->nullable();
+
             $table->string('buttom');
             $table->string('waist_knee_length');
             $table->string('knee_feet_length');

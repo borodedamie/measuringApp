@@ -52,15 +52,18 @@ class MaleController extends Controller
         $male->long_sleeve_length = $request->input('long_sleeve_length');
         $male->elbow_round = $request->input('elbow_round');
         $male->wrist_round = $request->input('wrist_round');
-        $male->shoulder_elbow = $request->input('shoulder_elbow');
+        $male->shoulder_elbow_length = $request->input('shoulder_elbow');
         $male->elbow_wrist = $request->input('elbow_wrist');
 
-        $male->buttom = $request->input('inputState');
+        $male->buttom = $request->input('buttom');
         $male->waist_knee_length = $request->input('waist_knee_length');
         $male->knee_feet_length = $request->input('knee_feet_length');
         $male->waist_round = $request->input('waist_round');
+        $male->thigh_round = $request->input('thigh_round');
         $male->knee_round = $request->input('knee_round');
         $male->ankle_round = $request->input('ankle_round');
+
+        // dd($male);
 
         $male->save();
         
