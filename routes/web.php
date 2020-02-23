@@ -24,5 +24,6 @@ Route::post('/new-male', 'MaleController@store')->name( 'male.store' );
 
 
 Route::get( '/female', 'FemaleController@index' )->name( 'female.index' );
+Route::post( '/new-female', 'FemaleController@store' )->name( 'female.store' );
 
 Route::post( '/customer', 'CustomerController@store')->name( 'customer.store' );

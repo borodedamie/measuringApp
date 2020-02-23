@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Female extends Model
 {
     //
+    protected $primaryKey = 'id';
+
     public $table = 'female';
 
     protected $fillable = [ 'id',
