@@ -30,6 +30,13 @@
 <!--===============================================================================================-->
 </head>
 <body>
+	<nav class="navbar navbar-dark bg-dark navbar-static-top" >
+		<div class="container">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">Measuring App</a>
+			</div>
+		</div>
+	</nav>
 	
 	<div class="limiter">
 		<div class="container-login100">

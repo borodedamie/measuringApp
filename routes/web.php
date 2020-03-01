@@ -27,3 +27,11 @@ Route::get( '/female', 'FemaleController@index' )->name( 'female.index' );
 Route::post( '/new-female', 'FemaleController@store' )->name( 'female.store' );
 
 Route::post( '/customer', 'CustomerController@store')->name( 'customer.store' );
+Route::post( '/update', 'CustomerController@update')->name( 'customer.update' );
+
+
+Route::get( '/admin', 'AdminController@index' );
+
+Route::get( '/test', 'AdminController@test' );
+
+
