@@ -54,7 +54,7 @@
     </div>
 </nav>
 
-<div class="container" style="-align: center;">
+<div class="container" >
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <br>
@@ -67,7 +67,7 @@
                 <p>Student added successfully</p>
             </div> --}}
             
-            <table id="table" class="display table table-bordered" width="100%">
+            <table id="datatable" class="display table table-bordered table-hover" width="100%" style="margin: 0px; padding: 0px;">
                 <thead>
                     <tr>
                         <th style="padding-left:15px;">Id</th>
@@ -76,7 +76,8 @@
                         <th>Phone Number</th>
                         <th>Age</th>
                         <th>Gender</th>
-                        <th>Edit</th>             
+                        <th>Measurement</th>
+                        <th style="">Edit</th>             
 
                     </tr>
                 </thead>
@@ -90,7 +91,8 @@
                             <td>{{ $customer->phone_number }}</td>
                             <td>{{ $customer->age }}</td>
                             <td>{{ $customer->gender }}</td>
-                            <td>
+                            <td><button disabled="disabled" type="button" class="btn btn-primary btn-sm">Show Details</button></td>
+                            <td class="form-group" style = "padding-top: 15px;">
                                 <a href="" class='show-modal btn btn-primary btn-xs' data-id="{{ $customer->customer_id }}" data-name="{{ $customer->customer_name }}" data-street_name="{{ $customer->street_name }}" data-phone_number="{{ $customer->phone_number }}" data-age="{{ $customer->age }}" data-gender="{{ $customer->gender }}"><i class="fa fa-eye"></i></a>
                                 <a href="" class='edit-modal btn btn-success btn-xs' data-id="{{ $customer->customer_id }}" data-name="{{ $customer->customer_name }}" data-street_name="{{ $customer->street_name }}" data-phone_number="{{ $customer->phone_number }}" data-age="{{ $customer->age }}" data-gender="{{ $customer->gender }}"><i class="fa fa-edit"></i></a>
                                 <a href="" class='delete-modal btn btn-danger btn-xs' data-id="{{ $customer->customer_id }}" data-name="{{ $customer->customer_name }}" data-street_name="{{ $customer->street_name }}" data-phone_number="{{ $customer->phone_number }}" data-age="{{ $customer->age }}" data-gender="{{ $customer->gender }}"><i class="fa fa-trash"></i></a>
