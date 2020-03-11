@@ -39,6 +39,8 @@ class FemaleController extends Controller
         //
         $female = new Female();
 
+        $female->top_sleeve_length = $request->input('top_sleeve_length');
+
         $female->burst_round = $request->input('burst_round');
         $female->shoulder = $request->input('shoulder');
         $female->back = $request->input('back');

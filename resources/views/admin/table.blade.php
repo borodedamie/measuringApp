@@ -67,7 +67,7 @@
                 <p>Student added successfully</p>
             </div> --}}
             
-            <table id="datatable" class="display table table-bordered table-hover" width="100%" style="margin: 0px; padding: 0px;">
+            <table id="datatable" class="display table table-bordered" width="100%" style="margin: 0px; padding: 0px;">
                 <thead>
                     <tr>
                         <th style="padding-left:15px;">Id</th>
@@ -91,7 +91,7 @@
                             <td>{{ $customer->phone_number }}</td>
                             <td>{{ $customer->age }}</td>
                             <td>{{ $customer->gender }}</td>
-                            <td><button disabled="disabled" type="button" class="btn btn-primary btn-sm">Show Details</button></td>
+                            <td><a href="#" class="btn btn-primary" id="showDetails">Show Details</a></td>
                             <td class="form-group" style = "padding-top: 15px;">
                                 <a href="" class='show-modal btn btn-primary btn-xs' data-id="{{ $customer->customer_id }}" data-name="{{ $customer->customer_name }}" data-street_name="{{ $customer->street_name }}" data-phone_number="{{ $customer->phone_number }}" data-age="{{ $customer->age }}" data-gender="{{ $customer->gender }}"><i class="fa fa-eye"></i></a>
                                 <a href="" class='edit-modal btn btn-success btn-xs' data-id="{{ $customer->customer_id }}" data-name="{{ $customer->customer_name }}" data-street_name="{{ $customer->street_name }}" data-phone_number="{{ $customer->phone_number }}" data-age="{{ $customer->age }}" data-gender="{{ $customer->gender }}"><i class="fa fa-edit"></i></a>
@@ -332,8 +332,25 @@
                 e.preventDefault();
 
                 $('#delete').modal('show');
+                $('.modal-title').text('Delete customer\'s info. ');
+
 
             });
+
+            
+            $('#showDetails').click( function(id) {
+                
+                var url = "{{ route('admin.showDetails') }}";
+                var urlId = url+"/"+id;
+                $.ajax({
+                    url: urlId,
+                    dataType: "json",
+                    success: function() {
+                        console.log('we made progress');
+                    }
+                })
+            });
+
 
 
         });

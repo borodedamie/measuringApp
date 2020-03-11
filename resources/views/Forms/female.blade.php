@@ -50,10 +50,10 @@
 					<div class="form-row">
               <div class="form-group col-md-12">
                   <label for="inputState">Top/Sleeve Length</label>
-                  <select id="inputState" id="top_sleeve_length" class="form-control">
+                  <select id="top_sleeve_length" class="form-control">
                     <option selected>Choose...</option>
-                    <option>Short</option>
-                    <option>Long</option>
+                    <option value="Short">Short</option>
+                    <option value="Long">Long</option>
                   </select>
                 </div>
                             <div class="form-group col-md-6">
@@ -263,6 +263,8 @@
             method: 'post',
             dataType: 'json',
             data: {
+
+                top_sleeve_length: $('#top_sleeve_length').val(),
 
                 burst_round: $('#burst_round').val(),
                 shoulder: $('#shoulder').val(),

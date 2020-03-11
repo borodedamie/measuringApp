@@ -34,4 +34,8 @@ Route::get( '/admin', 'AdminController@index' );
 
 Route::get( '/test', 'AdminController@test' );
 
+Route::get('/fittings/{id}', 'AdminController@showDetails')->name( 'admin.showDetails' );
+
+
+
 

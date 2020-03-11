@@ -19,4 +19,19 @@ class AdminController extends Controller
         
     }
 
+    public function showDetails($id) {
+        
+        // $customer = Customer::findOrFail($id);
+
+        // if( $customer->gender === 'male' ) {
+
+        // } else if( $customer->gender === 'female' ) {
+
+        // } else {
+        //     return response()->json( [ 'Error' => 'Customer\'s gender should be male or female.' ] );       
+        // }
+
+
+    }
+
 }
