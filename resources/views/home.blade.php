@@ -40,33 +40,33 @@
 	
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
+			<div class="card wrap-login100">
 				<form class="login100-form validate-form" id="customer_info">
 					<span class="login100-form-title p-b-34">
 						Please fill in your details
 					</span>
 					
-					<div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+					<div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20">
 						<input class="input100" type="text" id="customer_name" placeholder="Name">
 						<span class="focus-input100"></span>
 					</div>
-					<div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+					<div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20">
 						{{-- <label for="inputAddress">House Number</label> --}}
 						<input type="text" class="input100" id="house_number" placeholder="House Number e.g 1234 Main St">
 						<span class="focus-input100"></span>
 					  </div>
-					  <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+					  <div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20">
 						{{-- <label for="inputAddress2">Street Name</label> --}}
 						<input type="text" class="input100" id="street_name" placeholder="Street Name e.g Apartment, studio, or floor">
 						<span class="focus-input100"></span>
 					  </div>
 
-					<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" >
+					<div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20" >
 						<input class="input100" type="phone" id="phone_number" placeholder="Phone number">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" >
+					<div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20" >
 						<input class="input100" type="age" id="age" placeholder="Age">
 						<span class="focus-input100"></span>
 					</div>
@@ -101,17 +101,17 @@
 					</div> --}}
 
 					<div class="w-full text-center">
-						{{-- <a href="" class="txt3" id="proceed" style="margin-top: 2em";>
+						{{-- <a href="" class="txt3" id="proceed" style="margin-top: 1em";>
 
 						 Proceed
 
 						</a> --}}
-						<button type="submit" value="submit" class="txt3" id="proceed">Proceed</button>
+						<button type="submit" value="submit" class="txt3" id="proceed">Proceed<img id="arrow-hover" src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-paper-plane-1-120.png?raw=true"/></button>
 
 					</div>
 				</form>	
 
-				<div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
+				<div class="login100-more" style="background-image: url('images/test-2.jpg');"></div>
 			</div>
 		</div>
 	</div>
@@ -210,7 +210,7 @@
 						else if ( $('#select1').val() == 'Female' ) {
 
 						 	window.location.href = " {{ route('female.index') }} ";
-						}
+						} 
 
 						$('.alert').show();
 						$('.alert').html(result.success);
