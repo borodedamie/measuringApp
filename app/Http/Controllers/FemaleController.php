@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Female;
+use App\Customer;
 use Illuminate\Http\Request;
 
 class FemaleController extends Controller
@@ -34,9 +35,13 @@ class FemaleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id, Request $request)
     {
         //
+        // $customerID = Customer::findOrFail($id);
+
+        // return $customerID;
+
         $female = new Female();
 
         $female->top_sleeve_length = $request->input('top_sleeve_length');
