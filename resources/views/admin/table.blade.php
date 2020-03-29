@@ -91,7 +91,7 @@
                             <td>{{ $customer->phone_number }}</td>
                             <td>{{ $customer->age }}</td>
                             <td>{{ $customer->gender }}</td>
-                            <td><a href="#" class="btn btn-primary" id="showDetails">Show Details</a></td>
+                            <td><a href="{!! route('admin.showDetails', [ $customer->customer_id ]) !!}" class="btn btn-primary">Show Details</a></td>
                             <td class="form-group" style = "padding-top: 15px;">
                                 <a href="" class='show-modal btn btn-primary btn-xs' data-id="{{ $customer->customer_id }}" data-name="{{ $customer->customer_name }}" data-street_name="{{ $customer->street_name }}" data-phone_number="{{ $customer->phone_number }}" data-age="{{ $customer->age }}" data-gender="{{ $customer->gender }}"><i class="fa fa-eye"></i></a>
                                 <a href="" class='edit-modal btn btn-success btn-xs' data-id="{{ $customer->customer_id }}" data-name="{{ $customer->customer_name }}" data-street_name="{{ $customer->street_name }}" data-phone_number="{{ $customer->phone_number }}" data-age="{{ $customer->age }}" data-gender="{{ $customer->gender }}"><i class="fa fa-edit"></i></a>
@@ -244,6 +244,9 @@
 
     {{-- Datatables --}}
 
+    <script src="{{ URL::asset('js/admin.js') }}"></script>
+
+
     <script src="{{ URL::asset('vendor/Datatables/datatables.js') }}"></script>
     <script src="{{ URL::asset('vendor/Datatables/datatables.min.js') }}"></script>
     <script src="{{ URL::asset('vendor/Datatables/js/dataTables.bootstrap.js') }}"></script>
@@ -336,22 +339,6 @@
 
 
             });
-
-            
-            $('#showDetails').click( function(id) {
-                
-                var url = "{{ route('admin.showDetails') }}";
-                var urlId = url+"/"+id;
-                $.ajax({
-                    url: urlId,
-                    dataType: "json",
-                    success: function() {
-                        console.log('we made progress');
-                    }
-                })
-            });
-
-
 
         });
 

@@ -12,6 +12,7 @@ class Female extends Model
     public $table = 'female';
 
     protected $fillable = [ 'id',
+     'customer_id',
      'burst_round', 
      'shoulder', 
      'back', 

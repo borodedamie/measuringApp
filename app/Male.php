@@ -13,6 +13,7 @@ class Male extends Model
 
     protected $fillable = [ 
         'chest_round', 
+        'customer_id',
         'shoulder', 
         'back', 
         'short_armhole', 

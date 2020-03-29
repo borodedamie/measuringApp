@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Customer;
+use App\Male;
+use App\Female;
 
 
 class AdminController extends Controller
@@ -20,18 +22,13 @@ class AdminController extends Controller
     }
 
     public function showDetails($id) {
+
+        $customerInfo = Customer::findOrFail($id);
+        $gender = $customerInfo->gender;
+
         
-        // $customer = Customer::findOrFail($id);
 
-        // if( $customer->gender === 'male' ) {
-
-        // } else if( $customer->gender === 'female' ) {
-
-        // } else {
-        //     return response()->json( [ 'Error' => 'Customer\'s gender should be male or female.' ] );       
-        // }
-
-
+        return $gender;
     }
 
 }
