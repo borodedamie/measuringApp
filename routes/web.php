@@ -18,7 +18,7 @@
 Route::get('/showDetails/{id}', 'AdminController@showDetails')->name( 'admin.showDetails' );
 
 Route::get('/', function() {
-    return view('home');
+    return view('home2');
 });
 
 Route::get( '/male', 'MaleController@index' )->name( 'male.index' );
@@ -40,3 +40,7 @@ Route::get( '/test', 'AdminController@test' );
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -26,8 +26,6 @@ class AdminController extends Controller
         $customerInfo = Customer::findOrFail($id);
         $gender = $customerInfo->gender;
 
-        
-
         return $gender;
     }
 
