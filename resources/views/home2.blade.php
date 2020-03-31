@@ -45,39 +45,110 @@
 					<span class="login100-form-title p-b-34">
 						Please fill in your details
 					</span>
-					
+{{-- 					
 					<div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20">
 						<input class="input100" type="text" id="customer_name" placeholder="Name">
 						<span class="focus-input100"></span>
+					</div> --}}
+
+					<div class="form-group row">
+						<label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+						<div class="col-md-6">
+							<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+							@error('name')
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $message }}</strong>
+								</span>
+							@enderror
+						</div>
 					</div>
-					<div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20">
-						{{-- <label for="inputAddress">House Number</label> --}}
-						<input type="text" class="input100" id="house_number" placeholder="House Number e.g 1234 Main St">
-						<span class="focus-input100"></span>
-					  </div>
-					  <div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20">
-						{{-- <label for="inputAddress2">Street Name</label> --}}
+
+					<div class="form-group row">
+						<label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+
+						<div class="col-md-6">
+							<input id="address" type="text" class="form-control @error('name') is-invalid @enderror" name="address" required autocomplete="address" autofocus>
+
+							@error('address')
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $message }}</strong>
+								</span>
+							@enderror
+						</div>
+					</div>
+					
+					
+					  {{-- <div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20">
+						<label for="inputAddress2">Street Name</label>
 						<input type="text" class="input100" id="street_name" placeholder="Street Name e.g Apartment, studio, or floor">
 						<span class="focus-input100"></span>
-					  </div>
+					  </div> --}}
 
-					<div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20" >
-						<input class="input100" type="phone" id="phone_number" placeholder="Phone number">
-						<span class="focus-input100"></span>
+					  <div class="form-group row">
+						<label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
+
+						<div class="col-md-6">
+							<input id="phone_number" type="text" class="form-control @error('name') is-invalid @enderror" name="phone_number" required autocomplete="phone_number" autofocus>
+
+							@error('phone_number')
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $message }}</strong>
+								</span>
+							@enderror
+						</div>
 					</div>
 
-					<div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20" >
+					<div class="form-group row">
+						<label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+						<div class="col-md-6">
+							<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+							@error('email')
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $message }}</strong>
+								</span>
+							@enderror
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+						<div class="col-md-6">
+							<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+							@error('password')
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $message }}</strong>
+								</span>
+							@enderror
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+						<div class="col-md-6">
+							<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+						</div>
+					</div>
+
+
+					{{-- <div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20" >
 						<input class="input100" type="age" id="age" placeholder="Age">
 						<span class="focus-input100"></span>
-					</div>
+					</div> --}}
 
-					<div class="container-select">
+					{{-- <div class="container-select">
 						<select name="" id="select1" style="width:100%;">
 							<option value="0" disabled selected>Choose</option>
 							<option value="Male">Male</option>
 							<option value="Female">Female</option>
 						</select>
-					</div>
+					</div> --}}
 
 					{{-- <div class="class">
 						<input type="text">
@@ -106,7 +177,15 @@
 						 Proceed
 
 						</a> --}}
-						<button type="submit" value="submit" class="txt3" id="proceed">Proceed<img id="arrow-hover" src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-paper-plane-1-120.png?raw=true"/></button>
+						{{-- <button type="submit" value="submit" class="txt3" id="proceed">Proceed<img id="arrow-hover" src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-paper-plane-1-120.png?raw=true"/></button> --}}
+
+						<div class="form-group row mb-0">
+							<div class="col-md-6 offset-md-4">
+								<button type="submit" class="btn btn-primary">
+									{{ __('Register') }}
+								</button>
+							</div>
+						</div>
 
 					</div>
 				</form>	

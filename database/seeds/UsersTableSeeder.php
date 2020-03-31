@@ -18,8 +18,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'admin@yahoo.com',
             'role' => 1,
             'password' => app('hash')->make('admin'), 
-            'phone_number' => '08135019640',
-            'age' => 26
+            'phone_number' => '08135019640'
         ]);
     }
 }
