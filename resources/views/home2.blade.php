@@ -37,20 +37,16 @@
 			</div>
 		</div>
 	</nav>
-	
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="card wrap-login100">
-				<form class="login100-form validate-form" id="customer_info">
+				<form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
+					@csrf
+
 					<span class="login100-form-title p-b-34">
 						Please fill in your details
 					</span>
-{{-- 					
-					<div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20">
-						<input class="input100" type="text" id="customer_name" placeholder="Name">
-						<span class="focus-input100"></span>
-					</div> --}}
-
 					<div class="form-group row">
 						<label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -64,41 +60,32 @@
 							@enderror
 						</div>
 					</div>
+		<div class="form-group row">
+			<label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
 
-					<div class="form-group row">
-						<label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+				<div class="col-md-6">
+					<input id="address" type="text" class="form-control @error('name') is-invalid @enderror" name="address" required autocomplete="address" autofocus>
 
-						<div class="col-md-6">
-							<input id="address" type="text" class="form-control @error('name') is-invalid @enderror" name="address" required autocomplete="address" autofocus>
+					@error('address')
+						<span class="invalid-feedback" role="alert">
+							<strong>{{ $message }}</strong>
+						</span>
+					@enderror
+				</div>
+		</div>
+		<div class="form-group row">
+			<label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
 
-							@error('address')
-								<span class="invalid-feedback" role="alert">
-									<strong>{{ $message }}</strong>
-								</span>
-							@enderror
-						</div>
-					</div>
-					
-					
-					  {{-- <div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20">
-						<label for="inputAddress2">Street Name</label>
-						<input type="text" class="input100" id="street_name" placeholder="Street Name e.g Apartment, studio, or floor">
-						<span class="focus-input100"></span>
-					  </div> --}}
+				<div class="col-md-6">
+					<input id="phone_number" type="text" class="form-control @error('name') is-invalid @enderror" name="phone_number" required autocomplete="phone_number" autofocus>
 
-					  <div class="form-group row">
-						<label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
-
-						<div class="col-md-6">
-							<input id="phone_number" type="text" class="form-control @error('name') is-invalid @enderror" name="phone_number" required autocomplete="phone_number" autofocus>
-
-							@error('phone_number')
-								<span class="invalid-feedback" role="alert">
-									<strong>{{ $message }}</strong>
-								</span>
-							@enderror
-						</div>
-					</div>
+					@error('phone_number')
+						<span class="invalid-feedback" role="alert">
+							<strong>{{ $message }}</strong>
+						</span>
+					@enderror
+				</div>
+		</div>
 
 					<div class="form-group row">
 						<label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -136,57 +123,12 @@
 						</div>
 					</div>
 
-
-					{{-- <div class="form-control mb-4 rs1-wrap-input100 validate-input m-b-20" >
-						<input class="input100" type="age" id="age" placeholder="Age">
-						<span class="focus-input100"></span>
-					</div> --}}
-
-					{{-- <div class="container-select">
-						<select name="" id="select1" style="width:100%;">
-							<option value="0" disabled selected>Choose</option>
-							<option value="Male">Male</option>
-							<option value="Female">Female</option>
-						</select>
-					</div> --}}
-
-					{{-- <div class="class">
-						<input type="text">
-					</div> --}}
-					
-					
-					{{-- <div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Sign in
-						</button>
-					</div>
-
-					<div class="w-full text-center p-t-27 p-b-239">
-						<span class="txt1">
-							Forgot
-						</span>
-
-						<a href="#" class="txt2">
-							User name / password?
-						</a>
-					</div> --}}
-
-					<div class="w-full text-center">
-						{{-- <a href="" class="txt3" id="proceed" style="margin-top: 1em";>
-
-						 Proceed
-
-						</a> --}}
-						{{-- <button type="submit" value="submit" class="txt3" id="proceed">Proceed<img id="arrow-hover" src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-paper-plane-1-120.png?raw=true"/></button> --}}
-
-						<div class="form-group row mb-0">
-							<div class="col-md-6 offset-md-4">
-								<button type="submit" class="btn btn-primary">
-									{{ __('Register') }}
-								</button>
-							</div>
+					<div class="form-group row mb-0">
+						<div class="col-md-6 offset-md-4">
+							<button type="submit" class="btn btn-primary">
+								{{ __('Register') }}
+							</button>
 						</div>
-
 					</div>
 				</form>	
 
@@ -244,63 +186,55 @@
 		// 	console.log(form);
 		// })	
 
-		$(document).ready(function(){
-			$('#proceed').click(function(e){
-				e.preventDefault();
-
-				// var select = document.getElementById('select1');
-
-				// if( select.options[select.selectedIndex].value == 1){
-				// 	window.location.href = "{{ route('male.index') }}";
-				// } else if ( select.options[select.selectedIndex].value == 2){
-				// 	window.location.href = "{{ route('female.index') }}";
-				// }
+		// $(document).ready(function(){
+		// 	$('#register').click(function(e){
+		// 		e.preventDefault();
 
 
-				$.ajaxSetup({
-					headers: {
-							'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-						}
-				});
+		// 		$.ajaxSetup({
+		// 			headers: {
+		// 					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		// 				}
+		// 		});
 
-				$.ajax({
-					url: "{{ route('customer.store') }}",
-					method: 'post',
-					dataType: 'json',
-					data: {
+		// 		$.ajax({
+		// 			url: "{{ route('register') }}",
+		// 			method: 'post',
+		// 			dataType: 'json',
+		// 			data: {
 						
-						customer_name: $('#customer_name').val(),
-						house_number: $('#house_number').val(),
-						street_name: $('#street_name').val(),
-						phone_number: $('#phone_number').val(),
-						age: $('#age').val(),
-						gender: $('#select1').val()
-					},
+		// 				name: $('#name').val(),
+		// 				address: $('#address').val(),
+		// 				phone_number: $('#phone_number').val(),
+		// 				email: $('#email').val(),
+		// 				password: $('#password').val(),
+		// 				password_confirm: $('#password_confirm').val()
+		// 			},
 					
-					success: function(result){
+		// 			success: function(result){
 
 
-						if( $('#select1').val() == 'Male' ) {
+		// 				// if( $('#select1').val() == 'Male' ) {
 
-							window.location.href = " {{ route('male.index')}} ";
+		// 				// 	window.location.href = " {{ route('male.index')}} ";
 
-						} 
+		// 				// } 
 						
-						else if ( $('#select1').val() == 'Female' ) {
+		// 				// else if ( $('#select1').val() == 'Female' ) {
 
-						 	window.location.href = " {{ route('female.index') }} ";
-						} 
+		// 				//  	window.location.href = " {{ route('female.index') }} ";
+		// 				// } 
 
-						$('.alert').show();
-						$('.alert').html(result.success);
-						$('#customer_info')[0].reset();
+		// 				$('.alert').show();
+		// 				$('.alert').html(result.success);
+		// 				$('#customer_info')[0].reset();
 
-						console.log(result);
-					}
+		// 				console.log(result);
+		// 			}
 
-				});
-			});
-		});
+		// 		});
+		// 	});
+		// });
 
 		
 	</script>
