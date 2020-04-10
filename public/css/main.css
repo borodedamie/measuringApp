@@ -135,9 +135,9 @@ textarea:-ms-input-placeholder {
 button {
     display: inline-flex;
     height: 40px;
-    width: 150px;
+    width: 100px;
     border: 2px solid #eee8aa;
-    margin: 20px 20px 20px 20px;
+    /* margin: 20px 20px 20px 20px; */
     color: #8733a2;
     text-transform: uppercase;
     text-decoration: none;
