@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Providers\RouteServiceProvider;
 
 class RegisterController extends Controller
 {
@@ -54,7 +54,8 @@ class RegisterController extends Controller
             'address' => ['required', 'max:255'],
             'phone_number' => ['required', 'string', 'min:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed']
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'gender' => ['required']
             // 'password_confirm' => [ 'required' , 'same:password' ]
         ]);
     }
@@ -72,7 +73,8 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'phone_number' => $data['phone_number'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password'])
+            'password' => Hash::make($data['password']),
+            'gender' => $data['gender']
         ]);
     }
 }

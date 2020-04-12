@@ -86,7 +86,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="card wrap-login100">
-				<form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
+				<form class="login100-form validate-form" method="POST" action="">
 					@csrf
 
 					<span class="login100-form-title p-b-34">

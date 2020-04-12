@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +21,7 @@
 Route::get('/showDetails/{id}', 'AdminController@showDetails')->name( 'admin.showDetails' );
 
 Route::get('/', function() {
-    return view('home2');
+    return view('auth.register');
 });
 
 Route::get( '/male', 'MaleController@index' )->name( 'male.index' );
@@ -44,3 +47,6 @@ Route::get( '/test', 'AdminController@test' );
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/edit', 'HomeController@loadEdit')->name('edit')->middleware('auth');
+
