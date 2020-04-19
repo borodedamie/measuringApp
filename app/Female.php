@@ -12,7 +12,7 @@ class Female extends Model
     public $table = 'female';
 
     protected $fillable = [ 'id',
-     'customer_id',
+     'user_id',
      'burst_round', 
      'shoulder', 
      'back', 
@@ -41,8 +41,8 @@ class Female extends Model
      'skirt_knee_feet_length' 
     ];
 
-    public function customer()
+    public function user()
     {
-        return $this->belongsTo('App\Customer');
+        return $this->belongsTo('App\User', 'user_id');
     }
 }

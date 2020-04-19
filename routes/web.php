@@ -50,3 +50,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/edit', 'HomeController@loadEdit')->name('edit')->middleware('auth');
 
+// Route::any('/new-male', 'MaleController@create')->name( 'create' );
+
+

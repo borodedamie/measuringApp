@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Male;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MaleController extends Controller
 {
@@ -18,14 +19,15 @@ class MaleController extends Controller
         return view('Forms.male');
     }
 
-    /**
+       /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        return $request;
     }
 
     /**
@@ -37,7 +39,12 @@ class MaleController extends Controller
     public function store(Request $request)
     {
         //
+        $user = Auth::user();
+        $user_id = $user->id;
+
         $male = new Male();
+
+        $male->user_id = $user_id;
 
         $male->chest_round = $request->input('chest_round');
         $male->shoulder = $request->input('shoulder');

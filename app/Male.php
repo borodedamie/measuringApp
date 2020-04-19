@@ -13,7 +13,7 @@ class Male extends Model
 
     protected $fillable = [ 
         'chest_round', 
-        'customer_id',
+        'user_id',
         'shoulder', 
         'back', 
         'short_armhole', 
@@ -33,9 +33,9 @@ class Male extends Model
         'ankle_round' 
     ];
 
-    public function customer()
+    public function user()
     {
-        return $this->belongsTo('App\Customer');
+        return $this->belongsTo('App\User', 'user_id');
     }
 
 }

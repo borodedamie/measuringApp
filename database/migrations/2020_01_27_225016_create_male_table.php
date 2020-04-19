@@ -14,9 +14,10 @@ class CreateMaleTable extends Migration
     public function up()
     {
         Schema::create('male', function (Blueprint $table) {
+            
             $table->bigIncrements('id');
 
-            $table->integer('customer_id')->default(1);
+            $table->integer('user_id')->default(1);
 
             $table->string('chest_round');
             $table->string('shoulder');

@@ -32,11 +32,11 @@ class HomeController extends Controller
 
         if( $gender === 'Male') {
 
-            return view('forms.male');
+            return view('Forms.newMale');
 
         } else if ( $gender === 'Female') {
 
-            return view('forms.female');
+            return view('Forms.newFemale');
         }
 
     }
