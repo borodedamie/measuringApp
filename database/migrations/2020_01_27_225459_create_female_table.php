@@ -16,7 +16,8 @@ class CreateFemaleTable extends Migration
         Schema::create('female', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->integer('user_id')->default(1);
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->string('top_sleeve_length');
             

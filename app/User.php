@@ -10,7 +10,9 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    // protected $primaryKey = 'email';
+    // protected $primaryKey = 'id';
+
+    protected $table = 'users';
 
     // protected $keyType = 'string';
 
@@ -20,7 +22,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'address', 'phone_number', 'email', 'password', 'role', 'gender'
+        'id', 'name', 'address', 'phone_number', 'email', 'password', 'role', 'gender'
     ];
 
     /**
@@ -41,8 +43,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function role()
-    // {
-    //     return $this->hasOne('App\Phone');
-    // }
+    
 }

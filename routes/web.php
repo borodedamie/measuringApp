@@ -39,6 +39,13 @@ Route::get( '/admin', 'AdminController@index' );
 
 Route::get( '/test', 'AdminController@test' );
 
+Route::get( '/newAdmin', 'AdminController@adminIndex' );
+
+Route::get('/showDetail', 'AdminController@showDetails')->name('admin.details');
+
+Route::get('/show/{id}', 'AdminController@show')->name('admin.show');
+
+Route::post('/update/{id}', 'AdminController@update')->name( 'admin.update' );
 
 
 
